@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Your custom CSS styles -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #1976D2; /* Material Blue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        footer {
+            background-color: #424242; /* Material Grey */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .poll {
+            margin-bottom: 20px;
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Ensures rounded corners are applied */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Flat shadow */
+        }
+        .poll h3 {
+            margin: 0;
+            padding: 20px;
+            background-color: #1976D2; /* Material Blue */
+            color: #fff;
+        }
+        .poll form {
+            padding: 20px;
+        }
+        .poll input[type="radio"] {
+            margin-right: 10px;
+        }
+        .poll button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #1976D2; /* Material Blue */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .poll button:hover {
+            background-color: #1565C0; /* Darker shade of blue */
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <h1>Welcome to the Dashboard</h1>
+        </header>
+        <!-- Main Content -->
+        <main>
+            {% for poll in polls %}
+            <div class="poll">
+                <h3>{{ poll.question }}</h3>
+               <form action="{% url 'polls:vote' poll.id %}" method="post">
+
+                    {% csrf_token %}
+                    {% for choice in poll.choice_set.all %}
+                    <label>
+                        <input type="radio" name="choice" value="{{ choice.id }}">
+                        <span class="black-text">{{ choice.choice_text }}</span>
+                    </label><br>
+                    {% endfor %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Vote
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+            {% endfor %}
+        </main>
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 Your Company. All rights reserved.</p>
+        </footer>
+    </div>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Your custom JavaScript -->
+    <script>
+        // Initialize Materialize components if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdowns, modals, etc. if any
+            M.AutoInit();
+        });
+    </script>
+</body>
+</html>

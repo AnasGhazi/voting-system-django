@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        {% load static %}
+        body {
+            background-image: url('{% static "accounts/images/background.png" %}');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="grey lighten-3">
+    <div class="container">
+        <div class="row" style="margin-top: 20vh;">
+            <div class="col s12 m6 offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Login</span>
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="input-field">
+                                <input id="username" type="text" name="username" class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" type="password" name="password" class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card-action">
+                        <p>Not registered? <a href="{% url 'register' %}">Register</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+           background-image: url('{% static "accounts/images/background.png" %}');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="grey lighten-3">
+    <div class="container">
+        <div class="row" style="margin-top: 20vh;">
+            <div class="col s12 m6 offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Login</span>
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="input-field">
+                                <input id="username" type="text" name="username" class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" type="password" name="password" class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Compiled and minified JavaScript from Materialize CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            background-image: url('{% static "accounts/images/background.jpg" %}');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="grey lighten-3">
+    <!-- Content remains the same -->
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Login</button>
+    </form>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Login</button>
+    </form>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+ {% endcomment %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <!-- Your content here -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html> {% endcomment %} 
